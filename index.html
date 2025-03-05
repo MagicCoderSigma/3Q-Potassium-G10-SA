@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hang Man </title>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="celebration">
+            <div> YOU WIN! </div>
+            <img src="congrats.gif">
+            <button onclick="location.reload();" id="reloadButtonWin"> Click to reload </button>
+            <audio id="audioIfWin">
+                <source src="winSound.mp3" type="audio/MPEG">
+            </audio>
+        </div>
+        <div id="loss">
+            <div> YOU LOSE! </div>
+            <br>
+            <div id="wordDisplay"></div>
+            <audio id="audioIfLose">
+                <source src="loseSound.mp3" type="audio/MPEG">
+            </audio>
+            <button onclick="location.reload();" id="reloadButtonLose"> Click to reload </button>
+        </div>
+
+        <div id="container">
+            <div class="outputField">
+                <div id="hangmanSample">
+                    <hr id="triangle">
+                    <hr id="rope">
+                    <div id="l-1">
+                        <div class="circle"></div>
+                        <hr class="body">
+                    </div>
+                    <hr id="l-2" class="lArm">
+                    <hr id="l-3" class="rArm">
+                    <hr id="l-4" class="lFoot">
+                    <hr id="l-5" class="rFoot">
+                </div>
+                <div id="heartContainer">
+                    <div id="heart1">
+                        <div id="lHeart"></div>
+                        <div id="rHeart"></div>
+                    </div>
+                    <div id="heart2">
+                        <div id="lHeart"></div>
+                        <div id="rHeart"></div>
+                    </div>
+                    <div id="heart3">
+                        <div id="lHeart"></div>
+                        <div id="rHeart"></div>
+                    </div>
+                    <div id="heart4">
+                        <div id="lHeart"></div>
+                        <div id="rHeart"></div>
+                    </div>
+                    <div id="heart5">
+                        <div id="lHeart"></div>
+                        <div id="rHeart"></div>
+                    </div>
+                </div>
+                <div id="hint">
+                    <button onclick="document.getElementById('hint').innerHTML = 'Hint: ' + randomHint + '.'; imageUpdate();" id="hintButton"> Click for a hint. </button>
+                    <div id="warning"> It will cost you 1 life. </div>
+                </div>
+            </div>
+            <div id="inputField">
+                <div class="outputOfLetters">
+                    <span id="letter1"> _ </span>
+                    <span id="letter2"> _ </span>
+                    <span id="letter3"> _ </span>
+                    <span id="letter4"> _ </span>
+                    <span id="letter5"> _ </span>
+                </div>
+                <br>
+                <div id="inputField">
+                    <div class="rowOfLetters">
+                        <button onclick="checker('A', 'lA');" id="lA"> A </button>
+                        <button onclick="checker('B', 'lB');" id="lB"> B </button>
+                        <button onclick="checker('C', 'lC');" id="lC"> C </button>
+                        <button onclick="checker('D', 'lD');" id="lD"> D </button>
+                        <button onclick="checker('E', 'lE');" id="lE"> E </button>
+                        <button onclick="checker('F', 'lF');" id="lF"> F </button>
+                        <button onclick="checker('G', 'lG');" id="lG"> G </button>
+                        <button onclick="checker('H', 'lH');" id="lH"> H </button>
+                        <button onclick="checker('I', 'lI');" id="lI"> I </button>
+                        <button onclick="checker('J', 'lJ');" id="lJ"> J </button>
+                        <button onclick="checker('K', 'lK');" id="lK"> K </button>
+                        <button onclick="checker('L', 'lL');" id="lL"> L </button>
+                        <button onclick="checker('M', 'lM');" id="lM"> M </button>
+                        <button onclick="checker('N', 'lN');" id="lN"> N </button>
+                        <button onclick="checker('O', 'lO');" id="lO"> O </button>
+                        <button onclick="checker('P', 'lP');" id="lP"> P </button>
+                        <button onclick="checker('Q', 'lQ');" id="lQ"> Q </button>
+                        <button onclick="checker('R', 'lR');" id="lR"> R </button>
+                        <button onclick="checker('S', 'lS');" id="lS"> S </button>
+                        <button onclick="checker('T', 'lT');" id="lT"> T </button>
+                        <button onclick="checker('U', 'lU');" id="lU"> U </button>
+                        <button onclick="checker('V', 'lV');" id="lV"> V </button>
+                        <button onclick="checker('W', 'lW');" id="lW"> W </button>
+                        <button onclick="checker('X', 'lX');" id="lX"> X </button>
+                        <button onclick="checker('Y', 'lY');" id="lY"> Y </button>
+                        <button onclick="checker('Z', 'lZ');" id="lZ"> Z </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
